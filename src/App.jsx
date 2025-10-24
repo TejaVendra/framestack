@@ -4,7 +4,7 @@ import Pricing from "./Pages/Pricing";
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import ContactUs from "./Pages/Contact";
-import Nav from "./Components/nav";
+import Nav from "./Components/Nav";
 import Cursor from "./Sections/Cursor";
 import ServicesPage from "./Pages/ServicesPage";
 import { AuthProvider } from "./context/AuthProvider";

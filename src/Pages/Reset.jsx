@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import Nav from "../Components/nav";
+import Nav from "../Components/Nav";
 
 
 let apiUrl = import.meta.env.VITE_API_END_POINT;

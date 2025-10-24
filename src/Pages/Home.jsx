@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import Nav from '../Components/nav';
+import Nav from '../Components/Nav';
 import Hero from '../Sections/Hero';
 import Cursor from '../Sections/Cursor';
 import Portfolio from '../Sections/Portfolio';

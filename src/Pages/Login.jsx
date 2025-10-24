@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from "react";
-import Nav from "../Components/nav";
+import Nav from "../Components/Nav";
 import Copywright from "../Components/Copywright";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";

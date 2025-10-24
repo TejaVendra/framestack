@@ -19,13 +19,10 @@ import Navigation from "./Components/Navigation";
 import WebsiteRequest from "./Pages/WebsiteRequest";
 import UserProjects from "./Pages/UserProjects";
 import ProjectDetail from "./Pages/ProjectDetail";
-import Orders from "./Pages/orders";
+import Orders from "./Pages/Orders";
 import TemplateDisplay from "./Pages/TemplateDisplay";
 import NotFoundPage from "./Components/NotFoundPage";
-import ChatPage from "./Pages/UserChat";
-import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import UserChat from "./Pages/UserChat";
 import WorkInProgress from "./Components/WorkInProgress ";
 import TermsAndConditions from "./Components/TermsAndConditions";
 

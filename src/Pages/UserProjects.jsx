@@ -3,7 +3,7 @@ import axios from "axios";
 import { AuthContext } from "../context/AuthProvider";
 import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import Loader from "../Components/Loader";
+
 import axiosInstance from "../context/axiosInstance";
 import '../styles/LoaderAnime.css'
 

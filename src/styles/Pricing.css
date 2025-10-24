@@ -1,0 +1,362 @@
+
+/* Pricing.css - Dark Theme with Animations */
+.pricing-wrapper {
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+}
+
+.pricing-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-subtitle {
+  font-size: 1.2rem;
+  color: #a0a0a0;
+  margin-bottom: 1rem;
+}
+
+.pricing-title {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+/* Center the grid */
+.pricing-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.pricing-card {
+  background: #121212;
+  border-radius: 12px;
+  padding: 2rem;
+  width: 320px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border: 1px solid #2a2a2a;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
+}
+
+.pricing-card.highlight {
+  border: 2px solid #64b5f6;
+  box-shadow: 0 6px 25px rgba(100, 181, 246, 0.2);
+}
+
+.badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: #64b5f6;
+  color: #000000;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.plan-header h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+.price-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+}
+
+.currency {
+  font-size: 1.2rem;
+  color: #a0a0a0;
+}
+
+.price {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #64b5f6;
+}
+
+.period {
+  color: #a0a0a0;
+  margin-left: 0.5rem;
+  align-self: flex-end;
+  padding-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #bbbbbb;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.description {
+  color: #a0a0a0;
+  margin-bottom: 2rem;
+  min-height: 60px;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #d0d0d0;
+}
+
+.check-icon {
+  color: #4caf50;
+  margin-right: 0.8rem;
+  font-weight: bold;
+}
+
+.pricing-btn {
+  background: #2a2a2a;
+  color: #e0e0e0;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.2s ease;
+  font-weight: 600;
+}
+
+.pricing-btn.highlight-btn {
+  background: #64b5f6;
+  color: #000000;
+}
+
+.pricing-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+.pricing-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Popup styling */
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  color: white;
+  font-weight: 500;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 300px;
+  background: #1e1e1e;
+  border: 1px solid #333333;
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.popup-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@keyframes slideDown {
+  from {
+    top: -100px;
+    opacity: 0;
+  }
+  to {
+    top: 20px;
+    opacity: 1;
+  }
+}
+
+.success-popup {
+  border-left: 4px solid #4caf50;
+}
+
+.error-popup {
+  border-left: 4px solid #f44336;
+}
+
+.loading {
+  border-left: 4px solid #64b5f6;
+}
+
+/* Loading Animation */
+.loading-animation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(100, 181, 246, 0.3);
+  border-top: 4px solid #64b5f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Success Animation */
+.success-animation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.checkmark-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #4caf50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: popIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.checkmark {
+  position: relative;
+  transform: rotate(45deg);
+  width: 16px;
+  height: 28px;
+  border: 3px solid #ffffff;
+  border-top: none;
+  border-left: none;
+  animation: drawCheck 0.4s ease-out forwards;
+  opacity: 0;
+  animation-delay: 0.2s;
+}
+
+.checkmark-circle::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  border: 2px solid rgba(76, 175, 80, 0.3);
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes drawCheck {
+  0% {
+    height: 0;
+    width: 0;
+    opacity: 1;
+  }
+  30% {
+    height: 0;
+    width: 16px;
+    opacity: 1;
+  }
+  100% {
+    height: 28px;
+    width: 16px;
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(0.9);
+    opacity: 0.7;
+  }
+}
+
+/* Error Animation */
+.error-animation {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error-icon {
+  font-size: 24px;
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pricing-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pricing-title {
+    font-size: 2rem;
+  }
+  
+  .popup {
+    min-width: 250px;
+    padding: 0.8rem 1.5rem;
+    width: 90%;
+  }
+}

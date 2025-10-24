@@ -1,0 +1,104 @@
+
+.no-cursor {
+  cursor: none !important;
+}
+
+/* Main cursor dot - bright white for contrast */
+.custom-cursor {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffffff;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 0 10px #ffffff,
+    0 0 20px #ffffff,
+    0 0 30px #64ffda;
+  transition: all 0.1s ease-out;
+  mix-blend-mode: difference;
+}
+
+/* Cursor trail - glowing cyan effect */
+.cursor-trail {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: transparent;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: width 0.3s ease, height 0.3s ease;
+  mix-blend-mode: screen;
+  
+  /* Multiple glowing rings for trail effect */
+  box-shadow: 
+    0 0 0 2px rgba(100, 255, 218, 0.8),
+    0 0 10px 4px rgba(100, 255, 218, 0.4),
+    0 0 20px 8px rgba(100, 255, 218, 0.2);
+}
+
+/* Click animation - pulse effect */
+.custom-cursor:active {
+  animation: cursorClick 0.3s ease-out;
+}
+
+@keyframes cursorClick {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 
+      0 0 10px #ffffff,
+      0 0 20px #ffffff,
+      0 0 30px #64ffda;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(0.5);
+    box-shadow: 
+      0 0 5px #ffffff,
+      0 0 10px #ffffff,
+      0 0 15px #64ffda;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    box-shadow: 
+      0 0 10px #ffffff,
+      0 0 20px #ffffff,
+      0 0 30px #64ffda;
+  }
+}
+
+/* Hover effects - larger interactive cursor */
+a:hover ~ .custom-cursor,
+button:hover ~ .custom-cursor,
+input:hover ~ .custom-cursor {
+  width: 24px;
+  height: 24px;
+  background: transparent;
+  border: 2px solid #64ffda;
+  box-shadow: 
+    0 0 15px #64ffda,
+    0 0 30px rgba(100, 255, 218, 0.5);
+  mix-blend-mode: normal;
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Trail enhancement on hover */
+a:hover ~ .cursor-trail,
+button:hover ~ .cursor-trail,
+input:hover ~ .cursor-trail {
+  width: 50px;
+  height: 50px;
+  box-shadow: 
+    0 0 0 3px rgba(100, 255, 218, 1),
+    0 0 15px 6px rgba(100, 255, 218, 0.6),
+    0 0 30px 12px rgba(100, 255, 218, 0.3);
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Smooth trail movement optimization */
+.cursor-trail {
+  will-change: left, top;
+}

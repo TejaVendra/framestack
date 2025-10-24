@@ -1,38 +1,47 @@
-import React from 'react'
-import CardSer from '../Components/CardSer'
+import React from 'react';
+import CardSer from '../Components/CardSer';
+import '../styles/Portfolio.css'; // Import the CSS file
 
 const Portfolio = () => {
   return (
-    <div className='min-h-[100vh] px-[5rem] py-5'>
-      <div>
-        <h1 className='font-heading text-6xl mix-blend-difference'>
+ <section className='portfolio-section px-4 sm:px-6 md:px-10 lg:px-[5rem] py-8'>
+     <div className="portfolio-heading text-center mb-8"> {/* added mb-8 for spacing */}
+        <h2 className="heading-line heading-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold">
           Turn your ideas into impactful
-        </h1>
-        <h1 className='font-body text-6xl text-gray-400 mt-1.5 mix-blend-difference'>
+        </h2>
+        <h2 className="heading-line heading-right text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-2">
           solutions like them!
-        </h1>
+        </h2>
       </div>
 
-      <div className='grid grid-cols-2 gap-6'>
-        <CardSer 
-          title="Tournament-Sport management app" 
-          link="./src/assets/sport.webp" 
-        />
-        <CardSer 
-          title="UX for Crypto Trading platform" 
-          link="./src/assets/Crypto.jpg" 
-        />
-        <CardSer 
-          title="Modern fashion web design app" 
-          link="./src/assets/beclothing.jpg" 
-        />
-        <CardSer 
-          title="UX for Crypto Trading platform" 
-          link="./src/assets/kaniro.jpg" 
-        />
+      <div className='portfolio-cards grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 md:gap-8'>
+        <div className='portfolio-card-item'>
+          <CardSer 
+            title="Tournament-Sport management app" 
+            link="./src/assets/sport.webp" 
+          />
+        </div>
+        <div className='portfolio-card-item'>
+          <CardSer 
+            title="UX for Crypto Trading platform" 
+            link="./src/assets/Crypto.jpg" 
+          />
+        </div>
+        <div className='portfolio-card-item'>
+          <CardSer 
+            title="Modern fashion web design app" 
+            link="./src/assets/beclothing.jpg" 
+          />
+        </div>
+        <div className='portfolio-card-item'>
+          <CardSer 
+            title="UX for Crypto Trading platform" 
+            link="./src/assets/kaniro.jpg" 
+          />
+        </div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Portfolio
+export default Portfolio;

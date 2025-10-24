@@ -1,0 +1,293 @@
+
+.not-found-page {
+  background: linear-gradient(135deg, #6a5af9, #202020);
+  font-family: 'Comic Sans MS', 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+  position: relative;
+}
+
+.not-found-container {
+  text-align: center;
+  padding: 2rem;
+  max-width: 800px;
+  position: relative;
+  z-index: 10;
+}
+
+.error-code {
+  font-size: 8rem;
+  font-weight: 900;
+  color: #ffd700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                0 0 20px rgba(255, 215, 0, 0.3),
+                0 0 30px rgba(255, 215, 0, 0.2);
+  margin-bottom: 1rem;
+  animation: glow 2s infinite alternate,
+             bounce 1.5s infinite;
+}
+
+.error-message {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.error-description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #e0e0e0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-button {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.back-button:hover {
+  background: #ff5252;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 107, 107, 0.6);
+}
+
+.back-button:active {
+  transform: translateY(1px);
+}
+
+/* Cartoon character */
+.cartoon-character {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 2rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.face {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  background: #ffd700;
+  border-radius: 50%;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid #ffaa00;
+}
+
+.eyes {
+  position: absolute;
+  top: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.eye {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border-radius: 50%;
+  position: relative;
+  border: 2px solid #333;
+}
+
+.eye::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: #333;
+  border-radius: 50%;
+  top: 7px;
+  left: 7px;
+  animation: lookAround 5s infinite;
+}
+
+.mouth {
+  position: absolute;
+  width: 70px;
+  height: 30px;
+  border-bottom: 5px solid #333;
+  border-radius: 0 0 50px 50px;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: sadMouth 2s infinite alternate;
+}
+
+.tears {
+  position: absolute;
+  top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.tear {
+  width: 15px;
+  height: 25px;
+  background: #4fc3f7;
+  border-radius: 0 0 10px 10px;
+  animation: fallingTears 2s infinite;
+}
+
+.tear:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.tear:nth-child(2) {
+  animation-delay: 1.2s;
+}
+
+/* Floating elements */
+.floating-element {
+  position: absolute;
+  font-size: 3rem;
+  opacity: 0.7;
+  z-index: 1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.element-1 {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+  color: #ffd700;
+}
+
+.element-2 {
+  top: 20%;
+  right: 10%;
+  animation-delay: 1s;
+  color: #ff6b6b;
+}
+
+.element-3 {
+  bottom: 15%;
+  left: 15%;
+  animation-delay: 2s;
+  color: #4fc3f7;
+}
+
+.element-4 {
+  bottom: 25%;
+  right: 20%;
+  animation-delay: 3s;
+  color: #6bff6b;
+}
+
+/* Animations */
+@keyframes glow {
+  from { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5),
+                       0 0 20px rgba(255, 215, 0, 0.3); }
+  to { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8),
+                    0 0 30px rgba(255, 215, 0, 0.6),
+                    0 0 40px rgba(255, 215, 0, 0.4); }
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes fallingTears {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(50px); opacity: 0; }
+}
+
+@keyframes lookAround {
+  0% { transform: translate(0, 0); }
+  25% { transform: translate(5px, 0); }
+  50% { transform: translate(5px, 5px); }
+  75% { transform: translate(0, 5px); }
+  100% { transform: translate(0, 0); }
+}
+
+@keyframes sadMouth {
+  from { width: 70px; }
+  to { width: 90px; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .error-code {
+    font-size: 6rem;
+  }
+  
+  .error-message {
+    font-size: 2rem;
+  }
+  
+  .error-description {
+    font-size: 1rem;
+  }
+  
+  .cartoon-character {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .face {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .eyes {
+    top: 40px;
+  }
+  
+  .eye {
+    width: 25px;
+    height: 25px;
+  }
+  
+  .eye::before {
+    width: 12px;
+    height: 12px;
+    top: 5px;
+    left: 5px;
+  }
+  
+  .mouth {
+    width: 50px;
+    height: 20px;
+    bottom: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .error-code {
+    font-size: 4rem;
+  }
+  
+  .error-message {
+    font-size: 1.5rem;
+  }
+  
+  .not-found-container {
+    padding: 1rem;
+  }
+}

@@ -1,42 +1,59 @@
-import React from 'react'
-import { FaInstagram,FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
 
+import React from 'react';
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa6";
+import '../styles/Copywright.css'
 const Copywright = () => {
   return (
-    <div className='h-[50vh] w-screen pl-[5rem] pr-[3rem] py-4 flex justify-between align-center bg-black'>
-        <div className='w-1/3 flex flex-col align-center justify-between pb-[11rem] mr-[5rem]'>
-          <h1 className='font-heading font-bold text-xl'>
-            FrameStack
-          </h1>
-          <p className='font-para'>
+    <footer className="footer relative z-10">
+      <div className="footer-container">
+        <div className="footer-section footer-about">
+          <h1 className="footer-title">FrameStack</h1>
+          <p className="footer-description">
             FrameStack is a global UI/UX design agency that boosts brand value with user-friendly, effective designs for web, mobile, and SaaS platforms.
           </p>
-          <div className="icons w-[40%] flex justify-between pr-8">
-            <FaInstagram className='text-2xl'/>
-            <FaLinkedin className='text-2xl'/>
-            <FaGithub className='text-2xl'/>
+          <div className="footer-social-icons">
+            <a href="#" className="footer-social-link">
+              <FaInstagram className="footer-icon" />
+            </a>
+            <a href="#" className="footer-social-link">
+              <FaLinkedin className="footer-icon" />
+            </a>
+            <a href="#" className="footer-social-link">
+              <FaGithub className="footer-icon" />
+            </a>
           </div>
         </div>
-        <div className='w-1/3'>
-          <h1 className='font-heading font-bold text-xl mb-1.5'>Services</h1>
-          <ul>
-            <li className='text-[1.1rem] hover:underline'>Web-Development</li>
-            <li className='text-[1.1rem] hover:underline'>E-Commerce</li>
-            <li className='text-[1.1rem] hover:underline'>UI-UX Design</li>
-            <li className='text-[1.1rem] hover:underline'></li>
+
+        <div className="footer-section footer-services">
+          <h1 className="footer-title">Services</h1>
+          <ul className="footer-services-list">
+            <li><a href="#" className="footer-service-link">Web Development</a></li>
+            <li><a href="#" className="footer-service-link">E-Commerce</a></li>
+            <li><a href="#" className="footer-service-link">UI/UX Design</a></li>
           </ul>
         </div>
-        <div className='w-1/3'>
-            <h1 className='font-heading font-bold text-xl mb-1.5'>Services</h1>
-            <p>Subscribe to get the latest updates and tips.</p>
-            <form action="" className='mt-3'>
-              <input type="text" placeholder='Your Email' className='border-white rounded-md p-2 mr-3'/>
-              <button className='bg-white text-black p-2.5 font-heading rounded-md cursor-pointer'>Subscribe</button>
-            </form>
-        </div>
-    </div>
-  )
-}
 
-export default Copywright
+        <div className="footer-section footer-subscribe">
+          <h1 className="footer-title">Stay Updated</h1>
+          <p className="footer-sub-text">Subscribe to get the latest updates and tips.</p>
+          <form className="footer-sub-form">
+            <input 
+              type="email" 
+              placeholder="Your Email" 
+              className="footer-email-input" 
+              required 
+            />
+            <button type="submit" className="footer-sub-button">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div className="footer-copyright">
+        <p>&copy; {new Date().getFullYear()} FrameStack. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+};
+
+export default Copywright;

@@ -7,7 +7,7 @@ const Serve = ({ bg, col, title, para, link }) => {
         <h1 className='font-bold text-5xl font-heading' style={{ color: col }}>
           {title}
         </h1>
-        <p className='mt-2 text-2xl' style={{ color: white }}>
+        <p className='mt-2 text-2xl' style={{ color: "white" }}>
           {para}
         </p>
       </div>

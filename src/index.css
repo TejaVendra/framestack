@@ -1,96 +1,381 @@
+
 @import "tailwindcss";
 
-@theme{
-    --font-heading:"Montserrat", sans-serif;
-    --font-body:"Roboto", sans-serif;
-    --font-para:"Inter", sans-serif;
-    --animate-ani1 : ani1 4s ease-in infinite alternate ;
-    --animate-ani2 : ani2 6s ease-in infinite alternate;
-    --animate-animebor : bor 4s linear infinite;
+@theme {
+    /* Typography */
+    --font-heading: "Montserrat", sans-serif;
+    --font-body: "Roboto", sans-serif;
+    --font-para: "Inter", sans-serif;
+    
+    /* Colors */
+    --color-primary: #0066ff;
+    --color-primary-dark: #0052cc;
+    
+    /* Animations */
+    --animate-float: float 6s ease-in-out infinite;
+    --animate-drift: drift 8s ease-in-out infinite;
+    --animate-border-spin: border-spin 4s linear infinite;
+    --animate-scale-pulse: scale-pulse 3s ease-in-out infinite;
+    --animate-glow: glow 2s ease-in-out infinite alternate;
+    --animate-bounce-subtle: bounce-subtle 2.5s ease-in-out infinite;
 
-    @keyframes ani1 {
-        from{
-            transform: translate(20%,20%);
-        }to{
-            transform: translate(0%,10%);
-        }
-    }
-
-   @keyframes bor {
-        0% {
-            border: 3px solid transparent;
-            border-top: 3px solid blue;
+    /* Enhanced Floating animation (smoother infinite loop) */
+    @keyframes float {
+        0%, 100% {
+            transform: translate(0, 0);
         }
         25% {
-            border: 3px solid transparent;
-            border-right: 3px solid blue;
+            transform: translate(5%, 3%);
         }
         50% {
-            border: 3px solid transparent;
-            border-bottom: 3px solid blue;
+            transform: translate(10%, -2%);
         }
         75% {
-            border: 3px solid transparent;
-            border-left: 3px solid blue;
-        }
-        100% {
-            border: 3px solid transparent;
-            border-top: 3px solid blue;
+            transform: translate(3%, -5%);
         }
     }
 
+    /* Enhanced Diagonal drift animation (more natural movement) */
+    @keyframes drift {
+        0%, 100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+            transform: translate(20%, -10%) rotate(2deg);
+        }
+        50% {
+            transform: translate(40%, 5%) rotate(-3deg);
+        }
+        75% {
+            transform: translate(15%, 15%) rotate(1deg);
+        }
+    }
 
-    @keyframes ani2{
-        from{
-            transform: translate(-5%,20%);
-        }to{
-            transform: translate(50%,-20%);
+    /* Rotating border animation */
+    @keyframes border-spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Enhanced scale pulse with more breathing */
+    @keyframes scale-pulse {
+        0%, 100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+    }
+
+    /* New glow animation for interactive elements */
+    @keyframes glow {
+        from {
+            box-shadow: 0 0 5px rgba(0, 102, 255, 0.3);
+        }
+        to {
+            box-shadow: 0 0 20px rgba(0, 102, 255, 0.6), 0 0 30px rgba(0, 204, 255, 0.4);
+        }
+    }
+
+    /* Subtle bounce for CTAs */
+    @keyframes bounce-subtle {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-8px);
         }
     }
 }
 
-@layer base{
-    body{
+@layer base {
+    * {
+        @apply box-border;
+    }
+    
+    body {
         @apply bg-black text-white m-0 p-0 overflow-x-hidden;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 }
 
-@layer components{
-    .max-container{
-        @apply max-w-[1600px]
+@layer components {
+    /* Container */
+    .max-container {
+        @apply max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8;
     }
 
-    .btn{
-        @apply bg-white font-semibold font-heading rounded-3xl px-2.5 py-1.5 text-sm text-black overflow-x-hidden
+    /* Standard button */
+    .btn {
+        @apply bg-white text-black font-semibold font-heading rounded-3xl 
+               px-6 py-2.5 text-sm transition-all duration-300 ease-in-out
+               hover:bg-gray-100 hover:scale-105 active:scale-95
+               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black
+               disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
+               animate-glow;
     }
 
+    /* Premium button with fill effect */
     .pricebtn {
-        @apply bg-white text-black text-[1rem] font-para px-[5rem] py-4 rounded-full relative overflow-hidden transition-colors ease-in z-0;
+        @apply relative bg-white text-black text-base font-para font-medium
+               px-12 py-4 rounded-full overflow-hidden cursor-pointer
+               transition-all duration-300 ease-in-out z-0
+               hover:shadow-lg hover:shadow-blue-500/50
+               focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-black
+               disabled:opacity-50 disabled:cursor-not-allowed
+               sm:px-16 md:px-20
+               animate-bounce-subtle;
     }
 
-    .pricebtn::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #0066ff;
-    border-radius: 80%;
-    z-index: -1;
-    transition: all 0.5s ease-in-out;
+    .pricebtn::before {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #0066ff 0%, #0052cc 100%);
+        border-radius: 80%;
+        z-index: -1;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .pricebtn:hover {
-    color: white; /* text turns white */
+        color: white;
+        transform: translateY(-2px);
     }
 
-    .pricebtn:hover::after {
-    top: 0;
-    border-radius: 10%;
+    .pricebtn:hover::before {
+        top: 0;
+        border-radius: 50px;
     }
 
+    .pricebtn:active {
+        transform: translateY(0);
+    }
+
+    /* Animated border element */
+    .border-animated {
+        @apply relative;
+    }
+
+    .border-animated::before {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        border-radius: inherit;
+        padding: 2px;
+        background: linear-gradient(90deg, #0066ff, #00ccff, #0066ff);
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: border-spin 3s linear infinite;
+        background-size: 200% 100%;
+    }
+
+    /* Outline button variant */
+    .btn-outline {
+        @apply bg-transparent text-white border-2 border-white font-semibold font-heading 
+               rounded-3xl px-6 py-2.5 text-sm transition-all duration-300 ease-in-out
+               hover:bg-white hover:text-black hover:scale-105 active:scale-95
+               focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-black
+               disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
+               animate-glow;
+    }
+
+    /* Ghost button variant */
+    .btn-ghost {
+        @apply bg-transparent text-white font-semibold font-heading rounded-3xl 
+               px-6 py-2.5 text-sm transition-all duration-300 ease-in-out
+               hover:bg-white/10 hover:scale-105 active:scale-95
+               focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-black
+               disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100
+               animate-glow;
+    }
+
+    /* Link with underline animation */
+    .link-animated {
+        @apply relative inline-block text-white transition-colors duration-300
+               hover:text-blue-400 after:absolute after:bottom-0 after:left-0 
+               after:h-0.5 after:w-0 after:bg-blue-400 after:transition-all 
+               after:duration-300 hover:after:w-full
+               animate-glow;
+    }
+}
+
+@layer utilities {
+    /* Animation utilities */
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-drift {
+        animation: drift 8s ease-in-out infinite;
+    }
+
+    .animate-border-spin {
+        animation: border-spin 4s linear infinite;
+    }
+
+    .animate-scale-pulse {
+        animation: scale-pulse 3s ease-in-out infinite;
+    }
+
+    .animate-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .animate-bounce-subtle {
+        animation: bounce-subtle 2.5s ease-in-out infinite;
+    }
+
+    /* Text gradient utility */
+    .text-gradient {
+        @apply bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+    }
+
+    /* Glass morphism utility */
+    .glass {
+        @apply bg-white/10 backdrop-blur-lg border border-white/20;
+    }
+}
+
+
+/* Hero Section Base Animation */
+.hero-section {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.hero-section.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered Elements Animation */
+.hero-title, 
+.hero-subtitle, 
+.hero-cta, 
+.hero-image {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.22, 0.61, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.staggered-in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: Delayed transitions for smoother cascade */
+.hero-title {
+  transition-delay: 0.1s;
+}
+
+.hero-subtitle {
+  transition-delay: 0.2s;
+}
+
+.hero-cta {
+  transition-delay: 0.3s;
+}
+
+.hero-image {
+  transition-delay: 0.4s;
+}
+
+/* Optional smooth animations */
+.animate-fadeIn {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 
 
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+@keyframes jump {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 4s linear infinite;
+}
+
+.animate-jump {
+  animation: jump 1.5s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-medium {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+@keyframes spin-fast {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(720deg); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+}
+
+@keyframes bounce-medium {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-25px); }
+}
+
+@keyframes bounce-fast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.3); opacity: 1; }
+}
+
+@keyframes text-glow {
+  0%, 100% { text-shadow: 0 0 5px white; transform: scale(1); }
+  50% { text-shadow: 0 0 15px cyan, 0 0 25px white; transform: scale(1.05); }
+}
+
+/* Tailwind helper classes */
+.animate-spin-slow { animation: spin-slow 4s linear infinite; }
+.animate-spin-medium { animation: spin-medium 3s linear infinite; }
+.animate-spin-fast { animation: spin-fast 2s linear infinite; }
+.animate-bounce-slow { animation: bounce-slow 2s ease-in-out infinite; }
+.animate-bounce-medium { animation: bounce-medium 1.5s ease-in-out infinite; }
+.animate-bounce-fast { animation: bounce-fast 1s ease-in-out infinite; }
+.animate-pulse { animation: pulse 1.5s ease-in-out infinite; }
+.animate-text-glow { animation: text-glow 1.5s ease-in-out infinite; }

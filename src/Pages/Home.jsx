@@ -1,26 +1,37 @@
-import React from 'react'
-import Nav from '../Components/nav'
-import Hero from '../Sections/Hero'
-import Move from '../Sections/Move'
-import Cursor from '../Sections/Cursor'
-import Award from '../Sections/Award'
-import Portfolio from '../Sections/Portfolio'
-import Services from '../Sections/Services'
-import Copywright from '../Components/Copywright'
+
+import React, { useEffect } from 'react';
+import Nav from '../Components/nav';
+import Hero from '../Sections/Hero';
+import Cursor from '../Sections/Cursor';
+import Portfolio from '../Sections/Portfolio';
+import Services from '../Sections/Services';
+import Copywright from '../Components/Copywright';
+import initHeroAnimations from '../Components/heroAnimations';
+import initPortfolioAnimations from '../Components/portfolioAnimations';
+import FAQ from '../Sections/FAQ';
+import Testimonials from '../Sections/Testimonials';
 
 const Home = () => {
+  useEffect(() => {
+    // Initialize animations
+    initHeroAnimations();
+    initPortfolioAnimations();
+    // Move and Services animations are initialized within their components
+  }, []);
+
   return (
     <>
       <Nav></Nav>
       <Hero></Hero>
-      <Move></Move>
       <Cursor></Cursor>
       <Portfolio></Portfolio>
       <Services></Services>
-      <Award></Award>
+      <Testimonials></Testimonials>
+      <FAQ></FAQ>
       <Copywright></Copywright>
     </>
-  )
-}
 
-export default Home
+  );
+};
+
+export default Home;

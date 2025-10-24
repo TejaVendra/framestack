@@ -1,0 +1,96 @@
+.chat-container {
+  max-width: 600px;
+  margin: 20px auto;
+  border: 2px solid #222;
+  border-radius: 10px;
+  padding: 15px;
+  background: #111;
+  color: white;
+  padding-top: 100px;
+}
+
+.chat-header {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.messages {
+  height: 400px;
+  overflow-y: auto;
+  background: #1a1a1a;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.my-message {
+  text-align: right;
+  color: #66ffcc;
+}
+
+.other-message {
+  text-align: left;
+  color: #00b3ff;
+}
+
+.input-area {
+  display: flex;
+  margin-top: 10px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 5px 0 0 5px;
+  border: none;
+  outline: none;
+}
+
+.input-area button {
+  background: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.admin-container {
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background: #202020;
+  color: white;
+  padding: 15px;
+  height: 100vh;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #333;
+}
+
+.chat-area {
+  flex: 1;
+  padding: 20px;
+}
+
+.select-text {
+  text-align: center;
+  color: #aaa;
+}
+
+.login-screen {
+  text-align: center;
+  margin-top: 100px;
+}

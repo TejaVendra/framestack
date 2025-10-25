@@ -218,7 +218,7 @@ const Navigation = () => {
               {/* Mobile-only links */}
               <div className="lg:hidden">
                 <NavLink
-                    to="/pricing"
+                    to="/price"
                     className={({ isActive }) =>
                       `flex items-center gap-3 px-4 py-3 text-white rounded-lg transition-colors ${
                         isActive ? "bg-indigo-600 font-semibold" : "hover:bg-gray-800"
@@ -231,7 +231,7 @@ const Navigation = () => {
                   </NavLink>
 
                   <NavLink
-                    to="/contact"
+                    to="/contact-page"
                     className={({ isActive }) =>
                       `flex items-center gap-3 px-4 py-3 text-white rounded-lg transition-colors ${
                         isActive ? "bg-indigo-600 font-semibold" : "hover:bg-gray-800"

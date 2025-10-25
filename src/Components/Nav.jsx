@@ -32,8 +32,8 @@ const Nav = () => {
   const navLinks = [
     { name: "Home", path: "/" },
     { name: "Services", path: "/services" },
-    { name: "Pricing", path: "/pricing" },
-    { name: "Contact", path: "/contact" },
+    { name: "Pricing", path: "/price" },
+    { name: "Contact", path: "/contact-page" },
   ];
 
   // Fixed: Prevent body scroll when mobile menu is open

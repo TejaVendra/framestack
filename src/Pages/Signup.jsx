@@ -39,49 +39,59 @@ const Signup = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setErrors([]);
-    setSuccess(false);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setLoading(true);
+  setErrors([]);
+  setSuccess(false);
 
-    // Validate agreement
-    if (!formData.agreed) {
-      setErrors(["You must agree to the Terms & Privacy Policy"]);
-      setLoading(false);
-      return;
+  // Validate agreement
+  if (!formData.agreed) {
+    setErrors(["You must agree to the Terms & Privacy Policy"]);
+    setLoading(false);
+    return;
+  }
+
+  try {
+    const response = await axios.post(`${apiUrl}/signup/`, {
+      name: formData.name,
+      email: formData.email,
+      business_name: formData.business_name,
+      password: formData.password,
+    });
+
+    console.log(response);
+    setSuccess(true);
+
+    // ✅ Show success message for 3 seconds, then redirect
+    setTimeout(() => {
+      nav('/login');
+    }, 3000);
+
+  } catch (err) {
+    if (err.response) {
+      console.log("Backend error:", err.response.data);
+
+      // Collect backend errors
+      const backendErrors = Object.entries(err.response.data)
+        .map(([field, messages]) => `${field}: ${messages.join(", ")}`);
+
+      setErrors(
+        backendErrors.length > 0
+          ? backendErrors
+          : ["Registration failed. Please try again."]
+      );
+    } else if (err.request) {
+      setErrors(["Network error. Please check your connection."]);
+    } else {
+      setErrors(["Registration failed. Please try again."]);
     }
+    console.error("Signup error:", err);
+  } finally {
+    setLoading(false);
+  }
+};
 
-    try {
-      const response = await axios.post(`${apiUrl}/signup/`, {
-        name: formData.name,
-        email: formData.email,
-        business_name: formData.business_name,
-        password: formData.password,
-      });
-      console.log(response)
-      setSuccess(true);
-      nav('/login')
-    } catch (err) {
-        if (err.response) {
-          console.log("Backend error:", err.response.data);
-
-          // Collect all backend errors into separate blocks
-          const backendErrors = Object.entries(err.response.data)
-            .map(([field, messages]) => `${field}: ${messages.join(", ")}`);
-
-          setErrors(backendErrors.length > 0 ? backendErrors : ["Registration failed. Please try again."]);
-        } else if (err.request) {
-          setErrors(["Network error. Please check your connection."]);
-        } else {
-          setErrors(["Registration failed. Please try again."]);
-        }
-        console.error("Signup error:", err);
-      }
- finally {
-      setLoading(false);
-    }
-  };
 
   // Spinner component
   const Spinner = () => (

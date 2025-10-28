@@ -5,24 +5,24 @@ import { FaQuoteLeft, FaStar } from "react-icons/fa";
 
 const testimonials = [
   {
-    name: "John Doe",
-    role: "CEO, TechCorp",
-    message: "This service transformed our business operations completely. The efficiency gains have been remarkable, and our team productivity increased by 150% within the first quarter!",
-    avatar: "JD",
+    name: "Leela Krishna",
+    role: "Student Developer",
+    message: "I was struggling with my old hosting provider, but these servers are lightning fast! My portfolio site went from loading in 5 seconds to under 1 second. Plus, their support actually responds when I need help. Totally worth it!",
+    avatar: "LK",
     rating: 5,
   },
   {
-    name: "Jane Smith",
-    role: "Marketing Lead, InnovateX",
-    message: "Amazing support team and absolutely seamless user experience. The platform's intuitive design saved us countless hours of training. Easily five stars from our entire department!",
-    avatar: "JS",
+    name: "Thanay",
+    role: "Student Mechanical",
+    message: "Needed a website for my ECS project and they delivered big time! Fast turnaround, understood exactly what I wanted, and the site runs flawlessly. My professor was impressed too. Definitely recommend!",
+    avatar: "TY",
     rating: 5,
   },
   {
-    name: "Michael Brown",
-    role: "Developer, CodeHub",
-    message: "Intuitive platform with cutting-edge features that just work. The API integration was flawless, and the documentation is comprehensive. This is exactly what modern development needs!",
-    avatar: "MB",
+    name: "Thosith",
+    role: "Student",
+    message: "These guys built my portfolio website and honestly, it turned out way better than I imagined! Clean design, super smooth, and I've already landed two clients through it. Couldn't have asked for better work!",
+    avatar: "TH",
     rating: 5,
   },
 ];

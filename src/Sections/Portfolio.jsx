@@ -18,25 +18,25 @@ const Portfolio = () => {
         <div className='portfolio-card-item'>
           <CardSer 
             title="Tournament-Sport management app" 
-            link="./src/assets/sport.webp" 
+            link="assets/sport.webp" 
           />
         </div>
         <div className='portfolio-card-item'>
           <CardSer 
             title="UX for Crypto Trading platform" 
-            link="./src/assets/Crypto.jpg" 
+            link="assets/Crypto.jpg" 
           />
         </div>
         <div className='portfolio-card-item'>
           <CardSer 
             title="Modern fashion web design app" 
-            link="./src/assets/beclothing.jpg" 
+            link="assets/beclothing.jpg" 
           />
         </div>
         <div className='portfolio-card-item'>
           <CardSer 
             title="UX for Crypto Trading platform" 
-            link="./src/assets/kaniro.jpg" 
+            link="assets/kaniro.jpg" 
           />
         </div>
       </div>

@@ -42,9 +42,10 @@ const Orders = () => {
       try {
         const res = await axiosInstance.get("orders/")
     
-      
+     
 
         if (res.status == 200) {
+          console.log(res.data)
           setOrders(res.data);
        
         } else {

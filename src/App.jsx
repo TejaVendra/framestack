@@ -25,6 +25,7 @@ import NotFoundPage from "./Components/NotFoundPage";
 import "react-toastify/dist/ReactToastify.css";
 import WorkInProgress from "./Components/WorkInProgress ";
 import TermsAndConditions from "./Components/TermsAndConditions";
+import PopUp from "./Sections/PopUp";
 
 
 const router = createBrowserRouter([
@@ -237,6 +238,8 @@ function App() {
           <AuthProvider>
              <RouterProvider router={router}></RouterProvider>
           </AuthProvider>
+          <PopUp/>
+          <Cursor/>
           
         </>
     );

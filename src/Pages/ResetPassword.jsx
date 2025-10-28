@@ -22,7 +22,7 @@ const ResetPassword = () => {
         email
       });
 
-      setSuccess("Password reset link has been sent to your email!");
+      setSuccess(" Password reset link has been sent to your email.Please check your inbox and spam folder. The link will expire in 24 hours.");
       setEmail("");
     } catch (err) {
       if (err.response) {

@@ -26,6 +26,7 @@ import "react-toastify/dist/ReactToastify.css";
 import WorkInProgress from "./Components/WorkInProgress ";
 import TermsAndConditions from "./Components/TermsAndConditions";
 import PopUp from "./Sections/PopUp";
+import EmailReminderPopup from "./Sections/EmailReminderPopup ";
 
 
 const router = createBrowserRouter([
@@ -57,7 +58,7 @@ const router = createBrowserRouter([
       <PublicRoute>
          <Nav></Nav>
           <Signup></Signup>
-       
+         <EmailReminderPopup/>
       </PublicRoute>
      
     </>,

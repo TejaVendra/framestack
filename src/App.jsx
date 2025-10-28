@@ -35,18 +35,18 @@ const router = createBrowserRouter([
       <PublicRoute>
           <Nav></Nav>
          <Home></Home>
-         <Cursor/>
+      
       </PublicRoute>
       
     </>,
   },
   {
-    path: "/price",
+    path: "/pricing",
     element: <>
     <PublicRoute>
        <Nav></Nav>
       <Pricing></Pricing>
-      <Cursor/>
+  
     </PublicRoute>
      
     </>,
@@ -57,7 +57,7 @@ const router = createBrowserRouter([
       <PublicRoute>
          <Nav></Nav>
           <Signup></Signup>
-          <Cursor/>
+       
       </PublicRoute>
      
     </>,
@@ -68,7 +68,7 @@ const router = createBrowserRouter([
       <PublicRoute>
          <Nav></Nav>
           <TermsAndConditions></TermsAndConditions>
-          <Cursor/>
+         
       </PublicRoute>
      
     </>,
@@ -79,18 +79,18 @@ const router = createBrowserRouter([
     <PublicRoute>
         <Nav></Nav>
       <Login></Login>
-      <Cursor/>
+     
     </PublicRoute>
     
     </>,
   },
   {
-    path: "/contact-page",
+    path: "/contact",
     element: <>
       <PublicRoute>
         <Nav></Nav>
       <ContactUs></ContactUs>
-      <Cursor/>
+    
       </PublicRoute>
       
     </>,
@@ -101,7 +101,7 @@ const router = createBrowserRouter([
     <PublicRoute>
         <Nav></Nav>
       <ServicesPage/>
-      <Cursor/>
+   
     </PublicRoute>
     
     </>,
@@ -112,7 +112,7 @@ const router = createBrowserRouter([
     element: <>
      <PrivateRoute>
         <Dashboard/>
-        <Cursor/>
+     
      </PrivateRoute>
       
     </>,
@@ -123,7 +123,7 @@ const router = createBrowserRouter([
     <PrivateRoute>
         <Navigation/>
       <Pricing/>
-      <Cursor/>
+     
     </PrivateRoute>
    
     </>,
@@ -134,7 +134,7 @@ const router = createBrowserRouter([
     <PrivateRoute>
         <Navigation/>
       <ContactUs/>
-      <Cursor/>
+    
     </PrivateRoute>
    
     </>,
@@ -144,7 +144,7 @@ const router = createBrowserRouter([
     element: <>
     <PublicRoute>
        <Reset/>
-      <Cursor/>
+     
     </PublicRoute>
      
     </>,
@@ -154,7 +154,7 @@ const router = createBrowserRouter([
     element: <>
     <PublicRoute>
          <ResetPassword/>
-      <Cursor/>
+  
     </PublicRoute>
    
     </>,
@@ -165,7 +165,7 @@ const router = createBrowserRouter([
    <PrivateRoute>
     <Navigation/>
       <Profile/>
-      <Cursor/>
+     
    </PrivateRoute>
      </>,
   },
@@ -175,7 +175,7 @@ const router = createBrowserRouter([
    <PrivateRoute>
     <Navigation/>
       <UserProjects/>
-      <Cursor/>
+   
    </PrivateRoute>
      </>,
   },
@@ -185,7 +185,7 @@ const router = createBrowserRouter([
    <PrivateRoute>
     <Navigation/>
       <ProjectDetail/>
-      <Cursor/>
+     
    </PrivateRoute>
      </>,
   },
@@ -195,7 +195,7 @@ const router = createBrowserRouter([
    <PrivateRoute>
     <Navigation/>
       <Orders/>
-      <Cursor/>
+      
    </PrivateRoute>
      </>,
   },
@@ -205,7 +205,7 @@ const router = createBrowserRouter([
    <PrivateRoute>
     <Navigation/>
       <TemplateDisplay/>
-      <Cursor/>
+     
    </PrivateRoute>
      </>,
   },
@@ -214,7 +214,7 @@ const router = createBrowserRouter([
     element: <>
 
       <NotFoundPage/>
-      <Cursor/>
+     
  
      </>,
   },
@@ -224,7 +224,7 @@ const router = createBrowserRouter([
    <PrivateRoute>
     <Navigation/>
      <WorkInProgress/>
-      <Cursor/>
+   
    </PrivateRoute>
      </>,
   },

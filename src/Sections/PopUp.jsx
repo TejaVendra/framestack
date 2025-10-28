@@ -21,7 +21,7 @@ const PopUp = () => {
       if (!isDismissed) {
         setIsVisible(true);
       }
-    }, 200000);
+    }, 300000);
 
     return () => {
       clearTimeout(timer);

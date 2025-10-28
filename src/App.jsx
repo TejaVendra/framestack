@@ -40,7 +40,7 @@ const router = createBrowserRouter([
     </>,
   },
   {
-    path: "/pricing",
+    path: "/price",
     element: <>
     <PublicRoute>
        <Nav></Nav>
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
     </>,
   },
   {
-    path: "/contact",
+    path: "/contact-page",
     element: <>
       <PublicRoute>
         <Nav></Nav>

@@ -1,7 +1,10 @@
 import React from 'react';
 import CardSer from '../Components/CardSer';
 import '../styles/Portfolio.css'; // Import the CSS file
-
+import beclothing from '../assets/beclothing.jpg'
+import crypto from '../assets/Crypto.jpg'
+import sport from '../assets/sport.webp'
+import kaniro from '../assets/kaniro.jpg'
 const Portfolio = () => {
   return (
  <section className='portfolio-section px-4 sm:px-6 md:px-10 lg:px-[5rem] py-8'>
@@ -18,25 +21,25 @@ const Portfolio = () => {
         <div className='portfolio-card-item'>
           <CardSer 
             title="Tournament-Sport management app" 
-            link="assets/sport.webp" 
+            link={sport}
           />
         </div>
         <div className='portfolio-card-item'>
           <CardSer 
             title="UX for Crypto Trading platform" 
-            link="assets/Crypto.jpg" 
+            link={crypto}
           />
         </div>
         <div className='portfolio-card-item'>
           <CardSer 
             title="Modern fashion web design app" 
-            link="assets/beclothing.jpg" 
+            link={beclothing} 
           />
         </div>
         <div className='portfolio-card-item'>
           <CardSer 
             title="UX for Crypto Trading platform" 
-            link="assets/kaniro.jpg" 
+            link={kaniro}
           />
         </div>
       </div>

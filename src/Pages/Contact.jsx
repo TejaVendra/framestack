@@ -33,10 +33,10 @@ export default function ContactUs() {
       const { data } = await axios.post(`${apiUrl}/contact-message/`, formData);
 
       showToast(
-        `🎉 Thank you ${data.name}! We’ve received your message. We will connect to you soon at ${data.email}.`,
+        `🎉 Thank you ${data.data.name}! We’ve received your message. We will connect to you soon at ${data.data.email}.`,
         "success"
       );
-
+      console.log(data)
       // Reset form
       setFormData({ name: "", email: "", message: "" });
     } catch (err) {

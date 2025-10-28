@@ -19,7 +19,7 @@ const testimonials = [
     rating: 5,
   },
   {
-    name: "Thosith",
+    name: "Toshith",
     role: "Student",
     message: "These guys built my portfolio website and honestly, it turned out way better than I imagined! Clean design, super smooth, and I've already landed two clients through it. Couldn't have asked for better work!",
     avatar: "TH",
